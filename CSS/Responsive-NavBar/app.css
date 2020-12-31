@@ -8,6 +8,8 @@ h1 {
 }
 nav {
     font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
 }
 
 ul,li {
@@ -16,5 +18,16 @@ ul,li {
     padding: 0;
 }
 
+@media (max-width: 768px){
+    h1{
+        color: green;
+        font-size: 4em;
+    }
+}
 
-
+@media (max-width: 576px){
+    h1{
+        color: red;
+        font-size: 3em;
+    }
+}
