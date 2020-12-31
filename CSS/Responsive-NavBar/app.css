@@ -12,6 +12,11 @@ nav {
     justify-content: space-between;
 }
 
+ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 ul,li {
     display: inline;
     margin: 0;
