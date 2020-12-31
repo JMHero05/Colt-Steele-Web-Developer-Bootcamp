@@ -28,6 +28,9 @@ ul,li {
         color: green;
         font-size: 4em;
     }
+    nav {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 576px){
