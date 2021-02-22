@@ -17,10 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     while (parseInt(guess) !== answer) {
       if (guess > answer) {
-        alert('Too high. Guess again!');
+        alert("Too high. Guess again! (Enter 'q' to quit)");
       } else if (guess < answer) {
-        alert('Too low. Guess again!');
-      }
+        alert("Too low. Guess again! (Enter 'q' to quit)");
+      } else if (guess === 'q') {
+        alert(
+          'You quit the game. Better luck next time. Refresh to play again'
+        );
+        break;
     }
   };
 
