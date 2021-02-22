@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const answer = 7
+  let answer, guess;
 
   const guessingGame = () => {
-    let guess = Number(prompt('Guess a number!'))
+    guess = Number(prompt('Guess a number!'));
     if (guess > answer) {
-      alert('Too high. Refresh to guess again.')
+      alert('Too high. Refresh to guess again.');
     } else if (guess < answer) {
-      alert('Too low. Refresh to guess again.')
+      alert('Too low. Refresh to guess again.');
     } else {
-      alert('You guessed it!!!')
+      alert('You guessed it!!!');
     }
-  }
+  };
 
-  guessingGame()
-})
+  guessingGame();
+});
