@@ -8,12 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const guessingGame = () => {
     guess = parseInt(prompt('Guess a number!'));
-    if (guess > answer) {
-      alert('Too high. Refresh to guess again.');
-    } else if (guess < answer) {
-      alert('Too low. Refresh to guess again.');
-    } else {
-      alert('You guessed it!!!');
+
+    while (parseInt(guess) !== answer) {
+      if (guess > answer) {
+        alert('Too high. Refresh to guess again.');
+      } else if (guess < answer) {
+        alert('Too low. Refresh to guess again.');
+      }
     }
   };
 
