@@ -9,22 +9,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const guessingGame = () => {
     guess = parseInt(prompt('Guess a number!'));
 
-    if (!guess) {
-      while (!guess) {
-        guess = parseInt(prompt('Not a valid number! Guess again.'));
-      }
-    }
-
     while (parseInt(guess) !== answer) {
+      if (!guess) {
+        while (!guess) {
+          guess = parseInt(prompt('Not a valid number! Guess again.'));
+        }
+      }
+
       if (guess > answer) {
-        alert("Too high. Guess again! (Enter 'q' to quit)");
+        guess = prompt("Too high. Guess again! (Enter 'q' to quit)");
       } else if (guess < answer) {
-        alert("Too low. Guess again! (Enter 'q' to quit)");
+        guess = prompt("Too low. Guess again! (Enter 'q' to quit)");
       } else if (guess === 'q') {
         alert(
           'You quit the game. Better luck next time. Refresh to play again'
         );
         break;
+      } else if (!parseInt(guess)) {
+        guess = parseInt(
+          prompt(
+            "OH COME ON! We've been through this before! That's not a valid number! Guess again."
+          )
+        );
+      }
     }
   };
 
