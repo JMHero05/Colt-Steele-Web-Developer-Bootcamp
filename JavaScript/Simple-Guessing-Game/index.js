@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     while (parseInt(guess) !== answer) {
       if (guess > answer) {
-        alert('Too high. Refresh to guess again.');
+        alert('Too high. Guess again!');
       } else if (guess < answer) {
-        alert('Too low. Refresh to guess again.');
+        alert('Too low. Guess again!');
       }
     }
   };
