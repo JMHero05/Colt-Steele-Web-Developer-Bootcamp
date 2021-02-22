@@ -9,6 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const guessingGame = () => {
     guess = parseInt(prompt('Guess a number!'));
 
+    if (!guess) {
+      while (!guess) {
+        guess = parseInt(prompt('Not a valid number! Guess again.'));
+      }
+    }
+
     while (parseInt(guess) !== answer) {
       if (guess > answer) {
         alert('Too high. Guess again!');
