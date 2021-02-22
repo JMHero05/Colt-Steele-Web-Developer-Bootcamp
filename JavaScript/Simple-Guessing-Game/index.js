@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const guessingGame = () => {
-    guess = Number(prompt('Guess a number!'));
+    guess = parseInt(prompt('Guess a number!'));
     if (guess > answer) {
       alert('Too high. Refresh to guess again.');
     } else if (guess < answer) {
