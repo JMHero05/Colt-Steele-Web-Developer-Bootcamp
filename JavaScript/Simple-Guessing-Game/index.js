@@ -1,6 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   let answer, guess;
 
+  const getRandomAnswer = (min, max) => {
+    answer = Math.floor(Math.random() * (max - min) + min);
+    return answer;
+  };
+
   const guessingGame = () => {
     guess = Number(prompt('Guess a number!'));
     if (guess > answer) {
@@ -12,5 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
+  getRandomAnswer(1, 1000);
   guessingGame();
 });
