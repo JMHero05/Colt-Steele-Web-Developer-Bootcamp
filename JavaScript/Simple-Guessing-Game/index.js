@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  let answer, guess;
+  let answer,
+    guess,
+    attempts = 0;
 
   const getRandomAnswer = (min, max) => {
     answer = Math.floor(Math.random() * (max - min) + min);
@@ -10,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     guess = parseInt(prompt('Guess a number!'));
 
     while (parseInt(guess) !== answer) {
+      attempts++;
+
       if (!guess) {
         while (!guess) {
           guess = parseInt(prompt('Not a valid number! Guess again.'));
@@ -33,6 +37,14 @@ document.addEventListener('DOMContentLoaded', () => {
         );
       }
     }
+
+    guess === 'q'
+      ? null
+      : alert(
+          `You're right! The number was ${answer}. It took you ${attempts} ${
+            attempts === 1 ? 'guess' : 'guesses'
+          } to get it right. Wasn't that annoying? :) Refresh to play again...if you dare...!`
+        );
   };
 
   getRandomAnswer(1, 1000);
