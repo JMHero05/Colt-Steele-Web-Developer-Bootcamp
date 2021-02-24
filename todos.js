@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const addATodo = () => {
     newTodo = prompt('Enter new todo');
-    todoList.push(newTodo);
+    list.push(newTodo);
     console.log(`${newTodo} added to list`);
     response = prompt(initQuestion).toLowerCase();
   };
