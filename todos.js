@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  let response;
+  let response, newTodo;
   let list = [];
   const initQuestion = 'What would you like to do?';
 
@@ -8,9 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
     while (response !== 'quit') {
       console.log('Top of while loop');
       if (response === 'new') {
-        // addATodo();
+        addATodo();
       }
     }
+  };
+
+  const addATodo = () => {
+    newTodo = prompt('Enter new todo');
+    todoList.push(newTodo);
+    console.log(`${newTodo} added to list`);
+    response = prompt(initQuestion).toLowerCase();
   };
 
   todoList();
