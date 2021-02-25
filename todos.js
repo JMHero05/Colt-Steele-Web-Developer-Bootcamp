@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         response = prompt(initQuestion).toLowerCase();
       }
     }
+    console.log('OK, YOU QUIT THE APP');
   };
 
   const addATodo = () => {
@@ -45,8 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ) {
       todoIndex = parseInt(prompt('Enter index of todo to delete'));
     }
-    list.splice(todoIndex, 1);
-    console.log('Todo Removed');
+    let deleted = list.splice(todoIndex, 1);
+    console.log(`${deleted} Removed`);
     response = prompt(initQuestion).toLowerCase();
   };
 
