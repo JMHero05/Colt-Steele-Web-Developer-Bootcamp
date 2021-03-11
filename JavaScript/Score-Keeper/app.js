@@ -28,3 +28,11 @@ p2Button.addEventListener('click', () => {
     p2Display.textContent = p2Score;
   }
 });
+
+resetButton.addEventListener('click', () => {
+  isGameOver = false;
+  p1Score = 0;
+  p2Score = 0;
+  p1Display.textContent = 0;
+  p2Display.textContent = 0;
+});
