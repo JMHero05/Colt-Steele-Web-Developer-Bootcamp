@@ -3,10 +3,14 @@ const newButton = document.createElement('button');
 const body = document.querySelector('body');
 
 newH1.innerText = 'Click button for a random color!';
-newButton.innerText = 'Click me!';
+newButton.innerText = 'Change Color!';
 
 // Button Event Listener
-newButton.addEventListener('click', () => {});
+newButton.addEventListener('click', () => {
+  const randomColor = randomizeColor();
+  body.style.backgroundColor = randomColor;
+  newH1.innerText = randomColor;
+});
 
 // Function to Randomize Numbers
 const getRandomInt = (max) => {
