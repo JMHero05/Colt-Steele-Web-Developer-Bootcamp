@@ -6,13 +6,16 @@ newH1.innerText = 'Click button for a random color!';
 newButton.innerText = 'Click me!';
 
 // Button Event Listener
-newButton.addEventListener('click', () => {
-  console.log('Clicked!');
-});
+newButton.addEventListener('click', () => {});
 
-// Function to Randomize Colors
+// Function to Randomize Numbers
 const getRandomInt = (max) => {
   return Math.floor(Math.random() * Math.floor(max));
+};
+
+// Function to Randomize Colors
+const randomizeColor = () => {
+  return `${getRandomInt(256)}, ${getRandomInt(256)}, ${getRandomInt(256)}`;
 };
 
 body.appendChild(newH1);
