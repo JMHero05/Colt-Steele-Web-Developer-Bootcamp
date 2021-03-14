@@ -5,5 +5,9 @@ const body = document.querySelector('body');
 newH1.innerText = 'Click button for a random color!';
 newButton.innerText = 'Click me!';
 
+newButton.addEventListener('click', () => {
+  console.log('Clicked!');
+});
+
 body.appendChild(newH1);
 body.appendChild(newButton);
