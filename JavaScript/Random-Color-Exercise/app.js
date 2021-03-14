@@ -15,7 +15,9 @@ const getRandomInt = (max) => {
 
 // Function to Randomize Colors
 const randomizeColor = () => {
-  return `${getRandomInt(256)}, ${getRandomInt(256)}, ${getRandomInt(256)}`;
+  return `rgb(${getRandomInt(256)}, ${getRandomInt(256)}, ${getRandomInt(
+    256
+  )})`;
 };
 
 body.appendChild(newH1);
