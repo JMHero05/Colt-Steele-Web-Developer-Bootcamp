@@ -5,7 +5,14 @@ const baseURL =
   'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/';
 
 for (let i = 1; i <= 150; i++) {
-  const pokemon = document.createElement('img');
-  pokemon.src = baseURL + `${i}.png`;
+  const pokemon = document.createElement('div');
+  const label = document.createElement('span');
+  const newImg = document.createElement('img');
+
+  newImg.src = baseURL + `${i}.png`;
+  label.innerText = `#${i}`;
+
+  pokemon.appendChild(newImg);
+  pokemon.appendChild(label);
   container.appendChild(pokemon);
 }
