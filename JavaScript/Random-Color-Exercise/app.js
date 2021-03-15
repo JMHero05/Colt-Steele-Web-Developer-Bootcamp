@@ -10,18 +10,29 @@ newButton.addEventListener('click', () => {
   const randomColor = randomizeColor();
   body.style.backgroundColor = randomColor;
   newH1.innerText = randomColor;
+  whiteOrBlackFont(randomColor);
 });
 
 // Function to Randomize Numbers
-const getRandomInt = (max) => {
-  return Math.floor(Math.random() * Math.floor(max));
+const getRandomInt = () => {
+  return Math.floor(Math.random() * 256);
 };
 
 // Function to Randomize Colors
 const randomizeColor = () => {
-  return `rgb(${getRandomInt(256)}, ${getRandomInt(256)}, ${getRandomInt(
-    256
-  )})`;
+  return `rgb(${getRandomInt()},${getRandomInt()},${getRandomInt()})`;
+};
+
+// Function to Total Randomized Numbers
+const whiteOrBlackFont = (str) => {
+  let numStr = str.split('(')[1].split(')')[0];
+  let arr = numStr.split(',');
+
+  let total = arr.map((num) => parseInt(num)).reduce((a, b) => a + b);
+
+  return total > 300
+    ? (newH1.style.color = 'black')
+    : (newH1.style.color = 'white');
 };
 
 body.appendChild(newH1);
