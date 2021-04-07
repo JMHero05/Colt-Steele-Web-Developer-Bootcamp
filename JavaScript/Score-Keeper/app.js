@@ -15,6 +15,20 @@ const winningScoreSelect = document.querySelector('#winningScore');
 let winningScore = 3;
 let isGameOver = false;
 
+const updateScores = (player, opponent) => {
+  if (!isGameOver) {
+    player.score++;
+    if (player.score === winningScore) {
+      isGameOver = true;
+      player.display.classList.add('has-text-success');
+      opponent.display.classList.add('has-text-danger');
+      player.button.disabled = true;
+      opponent.button.disabled = true;
+    }
+    player.display.textContent = player.score;
+  }
+};
+
 p1Button.addEventListener('click', () => {
   if (!isGameOver) {
     p1Score++;
