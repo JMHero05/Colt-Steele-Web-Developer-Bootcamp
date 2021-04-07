@@ -29,32 +29,12 @@ const updateScores = (player, opponent) => {
   }
 };
 
-p1Button.addEventListener('click', () => {
-  if (!isGameOver) {
-    p1Score++;
-    if (p1Score === winningScore) {
-      isGameOver = true;
-      p1Display.classList.add('has-text-success');
-      p2Display.classList.add('has-text-danger');
-      p1Button.disabled = true;
-      p2Button.disabled = true;
-    }
-    p1Display.textContent = p1Score;
-  }
+p1.button.addEventListener('click', () => {
+  updateScores(p1, p2);
 });
 
-p2Button.addEventListener('click', () => {
-  if (!isGameOver) {
-    p2Score++;
-    if (p2Score === winningScore) {
-      isGameOver = true;
-      p2Display.classList.add('has-text-success');
-      p1Display.classList.add('has-text-danger');
-      p1Button.disabled = true;
-      p2Button.disabled = true;
-    }
-    p2Display.textContent = p2Score;
-  }
+p2.button.addEventListener('click', () => {
+  updateScores(p2, p1);
 });
 
 winningScoreSelect.addEventListener('change', () => {
