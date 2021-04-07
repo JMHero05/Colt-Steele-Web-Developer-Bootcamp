@@ -18,7 +18,7 @@ let isGameOver = false;
 const updateScores = (player, opponent) => {
   if (!isGameOver) {
     player.score++;
-    if (player.score === winningScore) {
+    if (player.score >= winningScore && player.score - opponent.score >= 2) {
       isGameOver = true;
       player.display.classList.add('has-text-success');
       opponent.display.classList.add('has-text-danger');
