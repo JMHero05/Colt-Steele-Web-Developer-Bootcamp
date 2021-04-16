@@ -1,7 +1,7 @@
 const fakeRequest = (url) => {
-  new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve();
-    }, 1000);
+    }, 3000);
   });
 };
