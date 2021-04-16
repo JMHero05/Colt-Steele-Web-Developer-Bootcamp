@@ -9,3 +9,12 @@ const fakeRequest = (url) => {
     }, 3000);
   });
 };
+
+fakeRequest('/dogs/1')
+  .then((data) => {
+    console.log('DONE WITH REQUEST!');
+    console.log('data is:', data);
+  })
+  .catch((err) => {
+    console.log('OH NO!', err);
+  });
