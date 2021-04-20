@@ -1,1 +1,5 @@
-console.log('Connected!');
+const form = document.querySelector('#searchForm');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  console.log('SUBMITTED!!!');
+});
