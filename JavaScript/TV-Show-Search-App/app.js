@@ -6,6 +6,7 @@ form.addEventListener('submit', async (e) => {
     `http://api.tvmaze.com/search/shows?q=${searchTerm}`
   );
   displayImages(res.data);
+  form.elements.query.value = '';
 });
 
 const displayImages = (shows) => {
