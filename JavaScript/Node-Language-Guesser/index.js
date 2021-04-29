@@ -1,1 +1,1 @@
-console.log('hello');
+const franc = require('franc');
