@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "franc": "^5.0.0"
+    "franc": "^5.0.0",
+    "lang": "^0.1.1"
   }
 }
