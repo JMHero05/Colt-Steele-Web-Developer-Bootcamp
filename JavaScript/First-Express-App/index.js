@@ -9,12 +9,21 @@ app.get('/', (req, res) => {
   res.send('THIS IS THE HOMEPAGE');
 });
 
+app.get('/r/:subreddit', (req, res) => {
+  const { subreddit } = req.params;
+  res.send(`<h1>THIS IS A SUBREDDIT ABOUT...${subreddit}</h1>`);
+});
+
 app.get('/cats', (req, res) => {
   res.send('MEOW!');
 });
 
 app.get('/dogs', (req, res) => {
   res.send('WOOF!');
+});
+
+app.get('*', (req, res) => {
+  res.send(`I DON'T KNOW THAT PATH :(`);
 });
 
 app.listen(3000, () => {
