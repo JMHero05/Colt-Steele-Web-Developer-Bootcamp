@@ -18,6 +18,8 @@
 	<% let numType = '' %>
 	<% randNum % 2 === 0 ? numType = 'even' : numType = 'odd' %>
 	<h2>That is an <%= numType %> number!</h2>
+
+	<h2><%= randNum % 2 === 0 ? 'That is an even number!' : 'That is an odd number!'%></h2>
 </body>
 
 </html>
