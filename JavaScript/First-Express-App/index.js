@@ -14,6 +14,11 @@ app.get('/r/:subreddit', (req, res) => {
   res.send(`<h1>THIS IS A SUBREDDIT ABOUT...${subreddit}</h1>`);
 });
 
+app.get('/search', (req, res) => {
+  const { q } = req.query;
+  res.send(`THESE ARE THE SEARCH RESULTS FOR: ${q}`);
+});
+
 app.get('/cats', (req, res) => {
   res.send('MEOW!');
 });
