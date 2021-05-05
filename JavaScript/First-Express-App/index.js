@@ -16,7 +16,9 @@ app.get('/r/:subreddit', (req, res) => {
 
 app.get('/search', (req, res) => {
   const { q } = req.query;
-  res.send(`THESE ARE THE SEARCH RESULTS FOR: ${q}`);
+  q
+    ? res.send(`THESE ARE THE SEARCH RESULTS FOR: ${q}`)
+    : res.send('<h1>Nothing found if nothing searched</h1>');
 });
 
 app.get('/cats', (req, res) => {
