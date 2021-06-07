@@ -12,7 +12,8 @@ app.get('/', (req, res) => {
 
 app.get('/r/:subreddit', (req, res) => {
   const { subreddit } = req.params;
-  res.render('subreddit', { subreddit });
+  const data = redditData[subreddit];
+  res.render('subreddit', { ...data });
 });
 
 app.get('/cats', (req, res) => {
