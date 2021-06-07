@@ -13,7 +13,9 @@ app.get('/', (req, res) => {
 app.get('/r/:subreddit', (req, res) => {
   const { subreddit } = req.params;
   const data = redditData[subreddit];
-  res.render('subreddit', { ...data });
+  data
+    ? res.render('subreddit', { ...data })
+    : res.render('notfound', { subreddit });
 });
 
 app.get('/cats', (req, res) => {
