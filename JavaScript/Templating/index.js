@@ -9,7 +9,8 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
 
 app.get('/', (req, res) => {
-  res.render('home.ejs');
+  const name = 'Home';
+  res.render('home.ejs', { name });
 });
 
 app.get('/r/:subreddit', (req, res) => {
@@ -22,12 +23,14 @@ app.get('/r/:subreddit', (req, res) => {
 
 app.get('/cats', (req, res) => {
   const cats = ['June', 'Pickle', 'Bug', 'Ducky', 'Diddy'];
-  res.render('cats.ejs', { cats });
+  const name = 'Cats';
+  res.render('cats.ejs', { cats, name });
 });
 
 app.get('/rand', (req, res) => {
   const randNum = Math.floor(Math.random() * 10) + 1;
-  res.render('random.ejs', { randNum });
+  const name = 'Random';
+  res.render('random.ejs', { randNum, name });
 });
 
 app.listen(3000, () => {
